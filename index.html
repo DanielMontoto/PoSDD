@@ -1,0 +1,123 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PoSDD - David & Daniel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- LOGIN / REGISTRO -->
+<div id="authContainer" class="auth-container">
+  <div class="auth-card" id="loginBox">
+    <h2>Iniciar Sesión</h2>
+    <label>Usuario</label>
+    <input id="loginUser" type="text">
+    <label>Contraseña</label>
+    <input id="loginPass" type="password">
+    <button id="loginBtn">Entrar</button>
+    <p>¿No tienes cuenta? <a href="#" id="showRegister">Regístrate</a></p>
+    <p id="loginMsg" class="msg"></p>
+  </div>
+
+  <div class="auth-card hidden" id="registerBox">
+    <h2>Registro</h2>
+    <label>Usuario</label>
+    <input id="regUser" type="text">
+    <label>Contraseña</label>
+    <input id="regPass" type="password">
+    <button id="registerBtn">Crear cuenta</button>
+    <p>¿Ya tienes cuenta? <a href="#" id="showLogin">Inicia sesión</a></p>
+    <p id="regMsg" class="msg"></p>
+  </div>
+</div>
+  <header class="site-header">
+    <button id="logoutBtn" class="logout-btn hidden">Cerrar sesión</button>
+    <div class="brand">
+      <div class="logo"><img src="logo-dinero.avif" style="width: 100%;"></div>
+      <h1>PoSDD - David & Daniel</h1>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false">☰</button>
+      <ul>
+        <li><a href="#" data-section="home" class="active">HOME</a></li>
+        <li><a href="#" data-section="ventas">VENTAS</a></li>
+        <li><a href="#" data-section="almacen">ALMACÉN</a></li>
+        <li><a href="#" data-section="chatbot">CHATBOT</a></li>
+        <li><a href="#" data-section="contactos">CONTACTOS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="home" class="panel">
+      <h2>Página principal</h2>
+      <p>Panel con información general: ventas recientes y datos de stock.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Ventas hoy</h3>
+          <p id="ventasHoy">0</p>
+          <button id="sumarVenta">Registrar venta +1</button>
+        </div>
+        <div class="card">
+          <h3>Stock rápido</h3>
+          <p id="stockInfo">Productos con bajo stock: 3</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ventas" class="panel hidden">
+      <h2>Ventas</h2>
+      <p>Realiza una venta rápida:</p>
+      <label>
+        Producto: <input id="prodName" placeholder="Nombre del producto">
+      </label>
+      <label>
+        Precio: <input id="prodPrice" type="number" value="0">
+      </label>
+      <button id="hacerVenta">Registrar venta</button>
+      <div id="ventaResult" class="result"></div>
+    </section>
+
+    <section id="almacen" class="panel hidden">
+      <h2>Almacén</h2>
+      <p>Gestión básica de productos:</p>
+      <ul id="productosList" class="list">
+        <li>Producto A — 12 unidades</li>
+        <li>Producto B — 4 unidades</li>
+        <li>Producto C — 0 unidades (agotado)</li>
+      </ul>
+    </section>
+
+    <section id="chatbot" class="panel hidden">
+      <h2>Chatbot (AI)</h2>
+      <p>Simulación de chat rápido:</p>
+      <div class="chatbox" id="chatbox">
+        <div class="message bot">Hola, ¿en qué puedo ayudarte?</div>
+      </div>
+      <div class="chat-controls">
+        <input id="chatInput" placeholder="Escribe tu pregunta...">
+        <button id="sendChat">Enviar</button>
+      </div>
+    </section>
+
+    <section id="contactos" class="panel hidden">
+      <h2>Contactos</h2>
+      <p>Servicio personalizado — disponibilidad L/V 09:00 - 15:30.</p>
+      <address>
+        Email: dmj277@educa.madrid.org<br>
+        Email: david.zhang1@educa.madrid.org
+        <br>
+        Tel: +34 600 000 000
+      </address>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© PoSDD David & Daniel — Demo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
